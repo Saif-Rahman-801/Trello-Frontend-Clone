@@ -18,10 +18,23 @@ export const taskReducer = (tasks = [], action) => {
       });
     }
     case "DELETE_TASK": {
+      return tasks.filter((task) => task.id !== action.payload.id);
     }
     case "CHANGE_BOARD_ID_OF_TASK": {
+      return tasks.map((task) => {
+        if (task.id === action.payload.id) {
+          task.boardId = action.payload.boardId;
+        }
+        return task;
+      });
     }
     case "CHANGE_LIST_ID_OF_TASK": {
+      return tasks.map((task) => {
+        if (task.id === action.payload.id) {
+          task.taskListId = action.payload.taskListId;
+        }
+        return task;
+      });
     }
     default: {
       return tasks;
