@@ -1,4 +1,4 @@
-const taskListReducer = (tasklists, action) => {
+export const taskListReducer = (tasklists, action) => {
   switch (action.type) {
     case "CREATE_LIST": {
       const taskList = {
