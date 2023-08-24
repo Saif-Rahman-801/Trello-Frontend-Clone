@@ -1,4 +1,4 @@
-export const taskReducer = (tasks = [], action) => {
+export const taskReducer = (tasks, action) => {
   switch (action.type) {
     case "CREATE_TASK": {
       const task = {
