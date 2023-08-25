@@ -5,13 +5,14 @@ import "./index.css";
 import BoardProvider from "./Contexts/Board.jsx";
 import TaskListsProvider from "./Contexts/TaskList.jsx";
 import TaskProvider from "./Contexts/Task.jsx";
+import router from "./router/Router.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BoardProvider>
       <TaskListsProvider>
         <TaskProvider>
-          <App />
+       <App/>
         </TaskProvider>
       </TaskListsProvider>
     </BoardProvider>
