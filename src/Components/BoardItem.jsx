@@ -37,7 +37,7 @@ const BoardItem = ({ board }) => {
     <div>
       <h5>{board.title}</h5>
       <button onClick={(e) => removeBoardHandler(e)}>Del</button>
-      <p>This board has {}</p>
+      <p>This board has {board.taskLists.length}</p>
     </div>
   );
 };
