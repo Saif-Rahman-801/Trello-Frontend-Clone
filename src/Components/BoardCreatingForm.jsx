@@ -20,16 +20,23 @@ const BoardCreatingForm = () => {
     }
   };
   return (
-    <div>
-      <form onSubmit={(e) => submitHandler(e)}>
+    <div className="p-4">
+      <form onSubmit={(e) => submitHandler(e)} className="flex items-center justify-center">
         <input
           type="text"
           name="boardTitle"
           id="text-field"
           value={boardTitle}
           onChange={(e) => setBoardTitle(e.target.value)}
+          className="p-2 border rounded-l-md w-2/3"
+          placeholder="Enter board title..."
         />
-        <button type="submit">Create Board</button>
+        <button
+          type="submit"
+          className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-r-md"
+        >
+          Create Board
+        </button>
       </form>
     </div>
   );

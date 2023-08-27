@@ -5,7 +5,6 @@ import BoardList from "../Components/BoardList";
 const Boards = () => {
   return (
     <div>
-      <h2>I am from board</h2>
       <BoardCreatingForm />
       <BoardList />
     </div>

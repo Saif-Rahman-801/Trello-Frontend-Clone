@@ -6,7 +6,7 @@ import BoardItem from "./BoardItem";
 const BoardList = () => {
   const { boards } = useContext(BoardContext);
   return (
-    <div>
+    <div className="flex justify-center items-center flex-wrap gap-4">
       {boards?.map((board) => (
         <Link key={board.id} to={`/${board.id}`}>
             <BoardItem board={board}></BoardItem>

@@ -34,10 +34,15 @@ const BoardItem = ({ board }) => {
 
   //   JSX
   return (
-    <div>
-      <h5>{board.title}</h5>
-      <button onClick={(e) => removeBoardHandler(e)}>Del</button>
-      <p>This board has {board.taskLists.length}</p>
+    <div className="bg-white p-4 rounded-md shadow-md hover:shadow-lg border w-[100%]">
+      <h5 className="text-xl font-semibold mb-2">{board.title}</h5>
+      <button
+        onClick={(e) => removeBoardHandler(e)}
+        className="bg-red-500 hover:bg-red-600 text-white font-semibold py-1 px-2 rounded-md"
+      >
+        Delete
+      </button>
+      <p className="mt-2">This board has {board.taskLists.length}</p>
     </div>
   );
 };
