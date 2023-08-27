@@ -14,6 +14,9 @@ const BoardCreatingForm = () => {
           title: boardTitle,
         },
       });
+      setBoardTitle("");
+    } else {
+      alert("Please Provide a Board name");
     }
   };
   return (
