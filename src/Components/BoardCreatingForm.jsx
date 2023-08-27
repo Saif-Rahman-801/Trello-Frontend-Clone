@@ -1,11 +1,35 @@
-import React from 'react';
+import React, { useContext, useState } from "react";
+import { BoardContext } from "../Contexts/Board";
 
 const BoardCreatingForm = () => {
-    return (
-        <div>
-            <h2>Form</h2>
-        </div>
-    );
+  const [boardTitle, setBoardTitle] = useState("");
+  const { dispatchBoardAction } = useContext(BoardContext);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    if (boardTitle) {
+      dispatchBoardAction({
+        type: "CREATE_BOARD",
+        payload: {
+          title: boardTitle,
+        },
+      });
+    }
+  };
+  return (
+    <div>
+      <form onSubmit={(e) => submitHandler(e)}>
+        <input
+          type="text"
+          name="boardTitle"
+          id="text-field"
+          value={boardTitle}
+          onChange={(e) => setBoardTitle(e.target.value)}
+        />
+        <button type="submit">Create Board</button>
+      </form>
+    </div>
+  );
 };
 
 export default BoardCreatingForm;
