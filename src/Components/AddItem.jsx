@@ -7,7 +7,7 @@ const AddItem = ({ listAddItem, setEditMode }) => {
         listAddItem ? "add-item list-add-item" : "add-item task-add-item"
       }
     >
-      <button>Add</button>
+      <button className="add-item-icon">Add</button>
       <p>{listAddItem ? "Add another List" : "Add a Card"}</p>
     </div>
   );
