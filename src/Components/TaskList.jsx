@@ -17,22 +17,30 @@ const TaskList = ({ taskList }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    const id = shortId.generate();
-    const listId = taskList.id;
-    const task = {
+    const id = Date.now;
+    // const listId = taskList.id;
+    /* const task = {
       id,
       title: taskTitle,
       listId,
       boardId: taskList.boardId,
-    };
-    dispatchTaskAction({ type: "CREATE_TASK", payload: task });
+    }; */
+    dispatchTaskAction({
+      type: "CREATE_TASK",
+      payload: {
+        id: id,
+        title: taskTitle,
+        taskListId: taskList.id,
+        boardId: taskList.boardId,
+      },
+    });
     dispatchTaskListsAction({
       type: "ADD_TASK_ID_TO_LIST",
-      payload: { id: listId, taskId: task.id },
+      payload: { id: taskList.id, taskId: id },
     });
     dispatchBoardAction({
       type: "ADD_TASK_ID_TO_BOARD",
-      payload: { id: task.boardId, taskId: task.id },
+      payload: { id: taskList.boardId, taskId: id },
     });
     setTaskTitle("");
     setEditMode(false);
