@@ -21,10 +21,10 @@ const TaskCard = ({ task }) => {
     dispatchTaskAction({ type: "DELETE_TASK", payload: { id: task.id } });
     dispatchTaskListsAction({
       type: "REMOVE_TASK_ID_FROM_LIST",
-      payload: { id: task.listId, taskId: task.id },
+      payload: { id: task.TaskListId, taskId: task.id },
     });
     dispatchBoardAction({
-      type: "REMOVE_TASK_ID_FROM_A_BOARD",
+      type: "REMOVE_TASK_ID_FROM_BOARD",
       payload: { id: task.boardId, taskId: task.id },
     });
   };
